@@ -17,10 +17,10 @@ struct Node
 
 int search(int inorder[], int start, int end, int curr)
 {
-    for(int i=start; i<end; i++)
+    for(int i=start; i<=end; i++)
     {
         if(inorder[i]==curr)
-           return -1;
+           return i;
     }
     return -1;
 }
@@ -63,7 +63,9 @@ int main()
     int preorder[]={1, 2, 4, 3, 5};
     int inorder[]={4, 2, 1, 5, 3};
 
+    //build tree
     Node* root = buildTree(preorder, inorder, 0, 4);
     inorderprint(root);
+    cout<<"\n";
     return 0;
 }
